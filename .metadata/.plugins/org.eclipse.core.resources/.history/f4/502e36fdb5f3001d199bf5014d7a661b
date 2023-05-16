@@ -1,0 +1,45 @@
+package mobile;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Manager {
+    public static void main(String[] args) {
+        List<Iphone> phonesList = new ArrayList<>();
+
+        Iphone iphone1 = new Iphone();
+        Iphone iphone2 = new Iphone();
+        Iphone iphone3 = new Iphone();
+
+        phonesList.add(iphone1);
+        phonesList.add(iphone2);
+        phonesList.add(iphone3);
+
+        iphone1.slideToUnlock();
+        
+        iphone1.makeCall("000-000-0000");
+        iphone1.receiveCall("111-111-1111");
+        
+        String playSong = iphone1.playSong("In the End");
+        String playVdo = iphone1.playVideo("Youtube");
+        
+        iphone1.installApplication("Cookie Run");
+       
+        iphone1.getLocation();
+        
+        System.out.println("playSong : " + playSong);
+        System.out.println("playVideo : " + playVdo);
+        System.out.println("Numbers of all 3 devices:");
+        phonesList.forEach(phone -> System.out.println(phone));
+
+        Map<String, Iphone> phonesMap = new HashMap<>();
+        phonesMap.put("123-456-7890", iphone1);
+        phonesMap.put("234-567-8901", iphone2);
+        phonesMap.put("345-678-9012", iphone3);
+
+        System.out.println("Devices by phone number:");
+        phonesMap.forEach((k, v) -> System.out.println(k + ": " + v));
+    }
+}

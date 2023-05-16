@@ -1,0 +1,20 @@
+package mobile;
+
+public class Iphone extends SmartPhone implements MediaPlayer, GPS {
+	
+    public void installApplication(String appName) {
+        System.out.println(appName + " has been installed.");
+    }
+
+    public String playSong(String songName) {
+        return "Playing song: " + songName;
+    }
+
+    public String playVideo(String videoName) {
+        return "Playing video: " + videoName;
+    }
+
+    public String getLocation() {
+        return "Lat: 999, Long: 111";
+    }
+}
